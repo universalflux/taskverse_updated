@@ -1,0 +1,36 @@
+<html ng-app = "taskverse">
+  <head>
+    <link type = "text/css" rel = "stylesheet" href = "styles/materialize.css" />
+    <link type = "text/css" rel = "stylesheet" href = "styles/style.css" />
+    <script src = "javascript/angular.min.js"></script>
+    <script src = "javascript/angular-route.min.js"></script>
+    <script src = "javascript/jquery.js"></script>
+    <script src = "javascript/materialize.js"></script>
+    <script src = "javascript/hand_coded.js"></script>
+  </head>
+
+  <body class = "grey grey-darken-3" ng-controller = "UsersController as user">
+    <nav>
+      <div class = "nav-wrapper blue">
+        <a href = "" class = "brand-logo">  Task <span class = "verse purple-text text-lighten-1"> Verse </span> </a>
+          <ul class = "right">
+            <li> <a href = "#/projects"> Projects </a></li>
+            <li> <a href = "#/assigned_tasks"> Assigned Tasks </a></li>
+            <li> <a href = "#/user_profile"> Profile </a></li>
+            <li ng-if = "!user.currentUser"><a class = "red-text"> Disconnected </a></li>
+            <li ng-if = "user.currentUser"><a class = "green-text"> Connected </a></li>
+          </ul>
+      </div>
+    </nav>
+
+      <div class = "container center">
+          <div ng-view = "">
+          </div>
+          <div ng-if = "!user.currentUser" ng-hide = "user.loginBool">
+            <input class = "white-text" type = "text" ng-model = "loginUser.userName" placeholder = "Login">
+            <input class = "white-text" type = "password" ng-model = "loginUser.password" placeholder = "Password">
+            <button class = "blue white-text" ng-click= "user.loginUser(loginUser)"> Login </button>
+          </div>
+          <div id = "create-account" ng-click = "user.removeLogin()" ng-if = "!user.currentUser" ng-hide = "user.loginBool" class = "right"><a class = "white-text" href = '#/create_user'>Create an account </a></div>
+      </div>
+  </body>
