@@ -17,11 +17,11 @@ const UserSchema = new Schema({
 });
 
 mongoose.model('User', UserSchema);
-let User = mongoose.model('User');
-User.create({firstName: 'testname', lastName: 'testlastname', age: 30, userName: 'sillabus', password: 'Hash'}, (err, data) => {
-  if (err) {
-    console.log('There was a problem creating the test user.');
-  } else {
-    console.log('Test user ' + data);
-  }
-});
+// let User = mongoose.model('User');
+// User.create({firstName: 'testname', lastName: 'testlastname', age: 30, userName: 'sillabus', password: 'Hash'}, (err, data) => {
+//   if (err) {
+//     console.log('There was a problem creating the test user.');
+//   } else {
+//     console.log('Test user ' + data);
+//   }
+// });

@@ -14,9 +14,9 @@
       <div class = "nav-wrapper blue">
         <a href = "" class = "brand-logo">  Task <span class = "verse purple-text text-lighten-1"> Verse </span> </a>
           <ul class = "right">
-            <li> <a href = "#/projects"> Projects </a></li>
-            <li> <a href = "#/assigned_tasks"> Assigned Tasks </a></li>
-            <li> <a href = "#/user_profile"> Profile </a></li>
+            <li> <a href = "#/projects" ng-click = "user.checkUrl()"> Projects </a></li>
+            <li> <a href = "#/assigned_tasks" ng-click = "user.checkUrl()" > Assigned Tasks </a></li>
+            <li> <a href = "#/user_profile" ng-click = "user.checkUrl()" > Profile </a></li>
             <li ng-if = "!user.currentUser"><a class = "red-text"> Disconnected </a></li>
             <li ng-if = "user.currentUser"><a class = "green-text"> Connected </a></li>
           </ul>
@@ -24,12 +24,14 @@
     </nav>
 
       <div class = "container center">
+          <div ng-hide = "user.hideViewPort">
           <div ng-view = "">
           </div>
+          </div>
           <div ng-if = "!user.currentUser" ng-hide = "user.loginBool">
-            <input class = "white-text" type = "text" ng-model = "loginUser.userName" placeholder = "Login">
-            <input class = "white-text" type = "password" ng-model = "loginUser.password" placeholder = "Password">
-            <button class = "blue white-text" ng-click= "user.loginUser(loginUser)"> Login </button>
+            <input class = "white-text" type = "text" ng-model = "user.potUser.userName" placeholder = "Login">
+            <input class = "white-text" type = "password" ng-model = "user.potUser.password" placeholder = "Password">
+            <button class = "blue white-text" ng-click= "user.loginUser(user.potUser)"> Login </button>
           </div>
           <div id = "create-account" ng-click = "user.removeLogin()" ng-if = "!user.currentUser" ng-hide = "user.loginBool" class = "right"><a class = "white-text" href = '#/create_user'>Create an account </a></div>
       </div>

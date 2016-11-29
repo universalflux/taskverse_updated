@@ -13,10 +13,10 @@ let ProjectSchema = new Schema({
 mongoose.model('Project', ProjectSchema);
 
 let Project = mongoose.model('Project');
-Project.create({projectName: 'Test'}, (err, data) => {
-  if (err) {
-    console.log('THere was a error creating the test Project');
-  } else {
-    console.log('Test  ' + data);
-  }
-});
+// Project.create({projectName: 'Test'}, (err, data) => {
+//   if (err) {
+//     console.log('THere was a error creating the test Project');
+//   } else {
+//     console.log('Test  ' + data);
+//   }
+// });

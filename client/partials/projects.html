@@ -1,1 +1,8 @@
 <h1 class = "white-text"> All Projects </h1>
+<div id = "view-port" ng-controller = "ProjectsController as project">
+    <input class = "white-text" type = "text" ng-model = "project.newProject.name" placeholder = "add a project"/>
+    <button class = "blue white-text" ng-click = "project.createProject(project.newProject)"> + add </button>
+    <ul class = "purple purple-darken-2" ng-repeat = "item in project.projectList">
+      <li><a ng-click = ""> <h5 class = "white-text"> {{ item.projectName }} </h5> </li>
+    <ul>
+</div>

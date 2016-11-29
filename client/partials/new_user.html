@@ -1,7 +1,7 @@
 <h1 class = "white-text"> New User </h1>
-<input class = "white-text" type = "text" ng-model = "newUser.firstName" placeholder = "first name"/>
-<input class = "white-text" tyfpe = "text" ng-model = "newUser.lastName" placeholder = "last name" />
-<input class = "white-text" type = "text" ng-model = "newUser.userName" placeholder = "username" />
-<input class = "white-text" type = "text" ng-model = "newUser.password" placeholder = "password" />
-<input class = "white-text" type = "text" ng-model = "newUser.confPassword" placeholder = "confirm password" />
-<button class = "blue white-text" ng-click = "user.createUser(newUser)"> Create </button>
+<input class = "white-text" type = "text" ng-model = "user.newUser.firstName" placeholder = "first name"/>
+<input class = "white-text" tyfpe = "text" ng-model = "user.newUser.lastName" placeholder = "last name" />
+<input class = "white-text" type = "text" ng-model = "user.newUser.userName" placeholder = "username" />
+<input class = "white-text" type = "text" ng-model = "user.newUser.password" placeholder = "password" />
+<input class = "white-text" type = "text" ng-model = "user.newUser.confPassword" placeholder = "confirm password" />
+<button class = "blue white-text" ng-click = "user.createUser(user.newUser)"> Create </button>
